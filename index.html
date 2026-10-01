@@ -15,52 +15,83 @@
             margin: 40px auto;
             padding: 0 10px;
         }
+
         h1 {
             font-size: 1.5em;
             font-weight: 500;
             line-height: 1.5em;
             padding-top: 2em;
         }
+
         h2 {
             font-size: 1em;
             font-weight: 600;
             line-height: 1.5em;
             padding-top: 2em;
         }
+
         h3 {
             font-size: 0.875em;
             font-weight: 600;
             line-height: 1.5em;
             padding-top: 0.875em;
         }
+
         p {
             font-size: 0.875em;
             line-height: 1.5;
         }
+
         strong {
             font-weight: 600;
         }
+
         a {
             color: #444;
             text-decoration: none;
         }
+
         a:hover {
             color: #000;
         }
+
         a:focus {
             outline: 2px solid #444;
             outline-offset: 2px;
         }
+
+        .track-hover {
+        text-decoration: underline dotted;
+        cursor: default;
+        }
+
+        .track-bg {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 80vmin;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        pointer-events: none;
+        z-index: -1;
+        transition: opacity 0.4s ease, transform 0.6s ease;
+        }
+
+        body:has(.track-hover:hover) .track-bg {
+        opacity: 0.05;
+        transform: translate(-50%, -50%) scale(1);
+        }
     </style>
 </head>
 <body>
+    <img src="nurburgring.svg" class="track-bg" alt="" aria-hidden="true">
     <h1>Slava Kim</h1>
     
     <p><strong>Designer, Founder, Investor in London</strong></p>
 
     <h2>About</h2>
     <p>Mediocre racing driver and Porsche enthusiast. I get along with people who have taste.</p>
-    <p>Taught myself design and code. Got a job on the other side of the world. Moved. Spent three years witnessing one of the craziest periods of hypergrowth in tech. Then Covid hit. Co-founded a company, it was a lot of fun. Moved again — to London. Now I help early-stage companies with funding and connect them with good friends from the industry. Obsessed with flat-six cars and driving them on a 20.832 km track in Germany.</p>
+    <p>Taught myself design and code. Got a job on the other side of the world. Moved. Spent three years witnessing one of the craziest periods of hypergrowth in tech. Then Covid hit. Co-founded a company, it was a lot of fun. Moved again — to London. Now I help early-stage companies with funding and connect them with good friends from the industry. Obsessed with flat-six cars and driving them on a <span class="track-hover">20.832 km track in Germany</span>.</p>
 
     <h2>Work</h2>
     
